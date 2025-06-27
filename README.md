@@ -6,7 +6,7 @@
 
 ## 🚀 Features
 
-- 🔍 **Extract Endpoints**: Parse Swagger/OpenAPI URLs to retrieve all available API endpoints.
+- 🔍 **Extract Endpoints**: Parse Swagger 2.0 URLs to retrieve all available API endpoints.
 - 🧠 **Generate Test Cases**: Use OpenAI to automatically generate test scenarios for each endpoint.
 - ⚙️ **Execute Tests**: Run the generated test cases and view real-time results.
 - 📥 **Download Results**: Export test cases and execution results as CSV files for sharing or analysis.
@@ -26,14 +26,14 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone git@bitbucket.org:keyvaluesoftwaresystems/api_ai_automation.git
-cd api_ai_automation
+git clone git@github.com:KeyValueSoftwareSystems/testrogue.git
+cd testrogue
 ```
 
 ### 2. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### 3. Create Environment Configuration
@@ -101,6 +101,6 @@ api_ai_automation/
 ## ✅ Pre-Execution Checklist
 
 - [x] Python 3.8 or higher is installed
-- [x] All dependencies are installed via `pip install -r requirements.txt`
+- [x] All dependencies are installed via `pip3 install -r requirements.txt`
 - [x] `.env` file is created with a valid `OPENAI_API_KEY`
 - [x] Port `5000` is available (or configured in `.env`)
