@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TestRogue</title> <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>TestRogue</h1>
+    <h2 class="tagline">Break APIs before they break you</h2>
+    <p class="subtitle">Paste a Swagger 2.0 JSON URL to extract endpoints and generate test cases.</p>
+
+    <div class="input-section">
+      <input type="text" id="swaggerUrl" placeholder="e.g., https://petstore.swagger.io/v2/swagger.json" value="https://petstore.swagger.io/v2/swagger.json" />
+      <button class="btn" onclick="extractEndpoints()">Extract Endpoints</button>
+    </div>
+
+    <input type="text" id="searchBox" placeholder="Search endpoints..." oninput="filterEndpoints()" style="display:none" />
+
+    <div class="bulk-actions" style="display:none;">
+      <button class="btn" id="generateAllBtn" onclick="generateTestsForAll()">Generate Tests for All Endpoints</button>
+      <button class="btn" id="executeAllBtn" onclick="executeTestsForAll()">Execute Tests for All Endpoints</button>
+      <button class="btn" id="downloadAllBtn" onclick="downloadAllTestCases()">Download All Test Cases (CSV)</button>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

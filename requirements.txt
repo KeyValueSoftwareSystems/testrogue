@@ -1,0 +1,12 @@
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-core>=0.1.0
+langchain-openai>=0.0.5
+python-dotenv>=1.1.0
+requests>=2.32.3
+PyYAML>=6.0.2
+langgraph~=0.4.3
+flask~=3.1.1
+dotenv~=0.9.9
+pydantic~=2.11.7
+faker~=37.4.0

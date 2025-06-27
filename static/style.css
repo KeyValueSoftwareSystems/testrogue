@@ -1,0 +1,461 @@
+ /* Core Global Styles */
+    body {
+      font-family: 'Open Sans', sans-serif; /* Readable body font */
+      line-height: 1.6;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh; /* Full viewport height */
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Dark, professional gradient background */
+      color: #ecf0f1; /* Light text for contrast */
+      overflow-x: hidden; /* Prevent horizontal scroll on small screens due to shadows */
+    }
+
+    .container {
+      max-width: 800px; /* Slightly wider container */
+      margin: 20px; /* Some margin for smaller screens */
+      padding: 40px; /* More padding */
+      background: rgba(255, 255, 255, 0.05); /* Semi-transparent white for modern look */
+      backdrop-filter: blur(10px); /* Frosted glass effect */
+      border-radius: 15px; /* More rounded corners */
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1); /* Deeper, more complex shadow with subtle border */
+      text-align: center; /* Center content within container */
+      width: 100%; /* Ensure container takes full width up to max-width */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif; /* Stronger, modern font for headings */
+      font-size: 3.5em; /* Larger title */
+      color: #ecf0f1; /* White for main title */
+      margin-bottom: 5px;
+      letter-spacing: 2px; /* A bit of spacing for flair */
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+    }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8em; /* Prominent tagline */
+      font-weight: 700;
+      background: linear-gradient(45deg, #2ca28a, #1a6598); /* Vibrant gradient for tagline */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; /* Makes text take on gradient */
+      margin-top: 5px;
+      margin-bottom: 30px; /* More space below tagline */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .subtitle {
+      font-size: 1.0em;
+      color: #bdc3c7; /* Lighter grey for subtitle */
+      margin-bottom: 40px; /* More space before input */
+    }
+
+    .input-section {
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      gap: 15px; /* More space between input and button */
+      margin-bottom: 30px;
+      width: 100%;
+      justify-content: center; /* Center input section */
+    }
+
+    #swaggerUrl {
+      flex-grow: 1;
+      padding: 15px 20px; /* More padding */
+      border: 1px solid #7f8c8d; /* Subtle border */
+      border-radius: 8px; /* More rounded */
+      background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent input */
+      color: #ecf0f1; /* White text in input */
+      font-size: 1.1em;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); /* Inner shadow for depth */
+      transition: all 0.3s ease;
+      min-width: 250px; /* Ensure input is not too small on wrap */
+    }
+
+    #swaggerUrl::placeholder { /* Placeholder color */
+      color: #bdc3c7;
+    }
+
+    #swaggerUrl:focus {
+      outline: none;
+      border-color: #3498db; /* Blue border on focus */
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 0 0 3px rgba(52, 152, 219, 0.5); /* Blue glow on focus */
+      background-color: rgba(255, 255, 255, 0.15); /* Slightly brighter on focus */
+    }
+
+    .btn {
+      padding: 15px 30px; /* Larger button */
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #164463, #173e57); /* Gradient button */
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Button shadow */
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #2980b9, #3498db); /* Inverted gradient on hover */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    /* Bulk actions and search box styling */
+    #searchBox {
+      width: calc(100% - 20px); /* Adjust for padding/margin */
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border: 1px solid #7f8c8d;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ecf0f1;
+      font-size: 1.1em;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      box-sizing: border-box; /* Include padding in width */
+    }
+    #searchBox::placeholder {
+        color: #bdc3c7;
+    }
+    #searchBox:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 0 0 3px rgba(52, 152, 219, 0.5);
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .bulk-actions {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap; /* Allow wrapping for buttons */
+      gap: 15px; /* More space between buttons */
+      justify-content: center;
+      margin-bottom: 30px; /* Space below bulk actions */
+    }
+    .bulk-actions .btn {
+      flex: 1 1 auto; /* Allow buttons to grow/shrink, distribute space */
+      min-width: 200px; /* Minimum width for readability */
+    }
+
+
+    /* Status messages */
+    .loading, .error, .success, .warning, .info {
+      font-weight: bold;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: left; /* Align text within status boxes */
+    }
+    .loading { background-color: rgba(52, 152, 219, 0.1); color: #3498db; border: 1px solid #3498db; } /* Blue for loading */
+    .error { background-color: rgba(231, 76, 60, 0.1); color: #e74c3c; border: 1px solid #e74c3c; } /* Red for errors */
+    .success { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; border: 1px solid #2ecc71; } /* Green for success */
+    .warning { background-color: rgba(241, 196, 15, 0.1); color: #f1c40f; border: 1px solid #f1c40f; } /* Yellow for warnings */
+    .info { background-color: rgba(52, 152, 219, 0.1); color: #3498db; border: 1px solid #3498db; } /* Blue for info */
+
+
+    .results-header {
+      margin-bottom: 25px; /* More space below header */
+      border-bottom: 1px solid rgba(255,255,255,0.1); /* Lighter border */
+      padding-bottom: 15px; /* More padding */
+      text-align: left; /* Align text within header */
+    }
+    .results-header h2 {
+        color: #ecf0f1;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+    .results-header p {
+        color: #bdc3c7;
+        font-size: 0.95em;
+    }
+    .endpoints-list { margin-top: 20px; }
+
+    /* Endpoint Card Styling */
+    .endpoint-card {
+      border: 4px solid rgba(255,255,255,0.1);
+      padding: 20px; /* More padding */
+      margin-bottom: 45px; /* More space between cards */
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+     /* background-color: rgba(255,255,255,0.08); /* Slightly more opaque background */
+      border-radius: 10px; /* More rounded */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Deeper shadow */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: left; /* Ensure text inside is left-aligned */
+    }
+    .endpoint-card:hover {
+        transform: translateY(-3px); /* Subtle lift on hover */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .endpoint-info {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; /* Allow method and path to wrap */
+    }
+    .method {
+      font-weight: bold;
+      padding: 8px 15px; /* More padding */
+      border-radius: 6px; /* More rounded */
+      color: white;
+      margin-right: 15px; /* More space */
+      font-size: 1em; /* Slightly larger method text */
+      min-width: 70px; /* Ensure consistent button width */
+      text-align: center;
+    }
+    /* Method colors - adjusted for dark theme */
+    .method.get { background-color: #27ae60; } /* Green */
+    .method.post { background-color: #2980b9; } /* Blue */
+    .method.put { background-color: #e67e22; color: white; } /* Orange, ensure text is white */
+    .method.delete { background-color: #c0392b; } /* Red */
+    .method.patch { background-color: #8e44ad; } /* Purple */
+    .method.head { background-color: #f39c12; } /* Add head */
+    .method.options { background-color: #7f8c8d; } /* Add options */
+
+    .path {
+      flex-grow: 1;
+      font-family: 'Fira Code', monospace; /* Consider a monospace font for paths if available/desired */
+      font-size: 1.1em; /* Larger path text */
+      color: #ecf0f1; /* Light color for path */
+      word-break: break-all; /* Break long paths */
+    }
+    .endpoint-actions {
+        margin-top: 15px; /* Space from method/path on wrap */
+        margin-left: auto; /* Push actions to the right */
+        display: flex;
+        gap: 10px; /* More space between buttons */
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        justify-content: flex-end; /* Align buttons to the right */
+    }
+    .btn-test, .btn-execute {
+        background-color: #7f8c8d; /* Grey color for action buttons */
+        font-size: 0.9em; /* Slightly smaller text for action buttons */
+        padding: 8px 15px; /* Adjusted padding */
+        border-radius: 6px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .btn-test:hover, .btn-execute:hover { background-color: #95a5a6; }
+
+    /* Test Cases Section */
+    .test-cases-section {
+      width: 100%;
+      margin-top: 20px; /* More space */
+      padding-top: 15px;
+      border-top: 3px dashed rgba(255,255,255,0.1);
+      display: none; /* Hidden by default */
+      text-align: left; /* Ensure content inside is left-aligned */
+    }
+
+
+    .test-cases-section h3 {
+        color: #ecf0f1; /* Changed from #000000 (black) to #ecf0f1 (light text) */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .test-case-card {
+      background-color: rgba(255, 255, 255, 0.08); /* Reverting to a subtle transparent white, similar to endpoint-card */
+      border: 2px solid rgba(255,255,255,0.1);
+      padding: 15px; /* More padding */
+      margin-bottom: 10px;
+      border-radius: 8px; /* More rounded */
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+    }
+
+    .test-case-card h4 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        /* Keeping this blue for contrast, but ensure it's visible on the new background */
+        color: #0c0d19; /* Blue for test case names */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2em;
+    }
+
+    .test-case-card p {
+        margin-bottom: 5px;
+        font-size: 0.95em;
+        color: #bdc3c7; /* Lighter grey for text */
+    }
+
+    .test-case-card pre {
+      background-color: rgba(0,0,0,0.25); /* Reverting to a darker background for code blocks */
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.8em;
+      max-height: 200px; /* Increased height limit */
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #aeb6bf; /* Reverting to the slightly darker light color for code text */
+      font-family: 'Fira Code', monospace; /* Consistent monospace for code */
+      border: 1px solid rgba(255,255,255,0.1); /* Keep a subtle border for definition */
+    }
+
+    .test-case-status {
+        position: absolute;
+        top: 15px; /* Adjusted position */
+        right: 15px; /* Adjusted position */
+        font-weight: bold;
+        padding: 5px 10px; /* More padding */
+        border-radius: 5px; /* More rounded */
+        font-size: 0.8em;
+    }
+    /* Status colors - keep them distinct */
+    .test-case-status.passed { background-color: #d4edda; color: #155724; }
+    .test-case-status.failed { background-color: #f8d7da; color: #721c24; }
+    .test-case-status.error { background-color: #fff3cd; color: #856404; }
+
+    #overallTestResults {
+      /*margin-top: 30px; /* More space above */
+      padding: 20px; /* More padding */
+     /* background-color: rgba(46, 204, 113, 0.1); /* Subtle green tint */
+     /* border: 1px solid rgba(46, 204, 113, 0.3);
+      border-radius: 10px; /* More rounded */
+      color: #ecf0f1;
+      text-align: left;
+    }
+    #overallTestResults h3 {
+        color: #ecf0f1;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    #overallTestResults p {
+        margin-bottom: 8px;
+        color: #0c0d19;
+    }
+    #overallTestResults p strong {
+        color: #fff;
+    }
+
+    /* Expandable section styles */
+    .expand-collapse-btn {
+        background: none;
+        border: none;
+        color: #3498db; /* Blue for toggle button */
+        cursor: pointer;
+        font-weight: bold;
+        padding: 8px 0; /* More padding */
+        text-align: left;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.95em;
+        transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+    .expand-collapse-btn:hover {
+        color: #5dade2; /* Lighter blue on hover */
+        text-decoration: underline;
+    }
+    .expandable-content {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.25); /* Same as pre for consistency */
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 0.8em;
+        max-height: 300px; /* Increased height for full response */
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        color: #aeb6bf; /* Same as pre for consistency */
+        font-family: 'Fira Code', monospace;
+    }
+    .arrow {
+        display: inline-block;
+        transition: transform 0.2s ease-in-out;
+        margin-left: 10px; /* Space from text */
+    }
+    .expand-collapse-btn[aria-expanded="true"] .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5em;
+        }
+        .tagline {
+            font-size: 1.4em;
+        }
+        .container {
+            padding: 25px;
+            margin: 15px;
+        }
+        .input-section {
+            flex-direction: column; /* Stack input and button vertically */
+            gap: 10px;
+        }
+        #swaggerUrl, .btn {
+            width: 100%; /* Full width when stacked */
+            min-width: unset; /* Remove min-width constraint */
+        }
+        .endpoint-info {
+            flex-direction: column; /* Stack method and path */
+            align-items: flex-start;
+        }
+        .method {
+            margin-right: 0;
+            margin-bottom: 10px; /* Space between method and path */
+        }
+        .endpoint-actions {
+            margin-left: 0;
+            margin-top: 15px;
+            justify-content: flex-start; /* Align buttons to the left */
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+        .tagline {
+            font-size: 1.2em;
+        }
+        .subtitle {
+            font-size: 1em;
+        }
+        .btn {
+            padding: 12px 20px;
+            font-size: 1em;
+        }
+        #swaggerUrl {
+            padding: 12px 15px;
+            font-size: 1em;
+        }
+        .method {
+            padding: 6px 10px;
+            font-size: 0.85em;
+        }
+        .path {
+            font-size: 0.9em;
+        }
+        .endpoint-card {
+            padding: 15px;
+        }
+        .test-case-card {
+            padding: 12px;
+        }
+        .test-case-card h4 {
+            font-size: 1.1em;
+        }
+        .test-case-card p, .test-case-card pre {
+            font-size: 0.8em;
+        }
+        .bulk-actions {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
